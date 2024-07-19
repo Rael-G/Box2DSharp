@@ -293,12 +293,18 @@ namespace Box2DSharp.Dynamics
             set => _angularDamping = value;
         }
 
+        private float _angularVelocity;
+
         /// <summary>
         /// Get/Set the angular velocity.
         /// the new angular velocity in radians/second.
         /// 角速度
         /// </summary>
-        public float AngularVelocity { get; internal set; }
+        public float AngularVelocity 
+        { 
+            get => _angularVelocity; 
+            set => SetAngularVelocity(value);
+        }
 
         /// <summary>
         /// Rotational inertia about the center of mass.
@@ -313,6 +319,8 @@ namespace Box2DSharp.Dynamics
             set => _linearDamping = value;
         }
 
+        private Vector2 _linearVelocity = new Vector2();
+
         /// <summary>
         /// 线速度
         /// </summary>
@@ -320,7 +328,11 @@ namespace Box2DSharp.Dynamics
         /// @param v the new linear velocity of the center of mass.
         /// Get the linear velocity of the center of mass.
         /// @return the linear velocity of the center of mass.
-        public Vector2 LinearVelocity { get; internal set; }
+        public Vector2 LinearVelocity 
+        { 
+            get => _linearVelocity;
+            set => SetLinearVelocity(value);
+        }
 
         public float Mass => _mass;
 
