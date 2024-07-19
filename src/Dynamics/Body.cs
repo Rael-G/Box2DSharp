@@ -1062,7 +1062,7 @@ namespace Box2DSharp.Dynamics
         /// This normally does not need to be called unless you called SetMassData to override
         /// the mass and you later want to reset the mass.
         /// 重置质量数据
-        private void ResetMassData()
+        public void ResetMassData()
         {
             // Compute mass data from shapes. Each shape has its own density.
             // 从所有形状计算质量数据,每个形状都有各自的密度
